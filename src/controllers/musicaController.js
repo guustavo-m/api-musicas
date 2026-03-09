@@ -6,7 +6,7 @@ function listarTodos(req, res) {
     res.status(200).json(musicas);
   } catch (erro) {
     res.status(500).json({
-      mensagem: "Erro ao listar musicas",
+      mensagem: "Erro ao listar músicas",
       erro: erro.message,
     });
   }
@@ -82,12 +82,12 @@ function atualizar(req, res) {
       res.status(200).json(musicaAtualizada);
     } else {
       res.status(404).json({
-        mensagem: `Música com ID ${id} não encontrado`,
+        mensagem: `Música com ID ${id} não encontrada`,
       });
     }
   } catch (erro) {
     res.status(500).json({
-      mensagem: "Erro ao atualizar musica",
+      mensagem: "Erro ao atualizar música",
       erro: erro.message,
     });
   }
@@ -105,16 +105,16 @@ function deletar(req, res) {
     const deletado = musicaModel.deletar(id);
     if (deletado) {
       res.status(200).json({
-        mensagem: `Música com ID ${id} removido com sucesso`,
+        mensagem: `Música com ID ${id} removida com sucesso`,
       });
     } else {
       res.status(404).json({
-        mensagem: `Música com ID ${id} não encontrado`,
+        mensagem: `Música com ID ${id} não encontrada`,
       });
     }
   } catch (erro) {
     res.status(500).json({
-      mensagem: "Erro ao deletar musica",
+      mensagem: "Erro ao deletar música",
       erro: erro.message,
     });
   }
@@ -127,7 +127,7 @@ function buscarPorAutor(req, res) {
     res.status(200).json(musicas);
   } catch (erro) {
     res.status(500).json({
-      mensagem: "Erro ao buscar musicas por autor",
+      mensagem: "Erro ao buscar músicas por autor",
       erro: erro.message,
     });
   }
